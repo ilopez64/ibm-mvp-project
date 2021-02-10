@@ -163,7 +163,6 @@ def show_exam_result(request, course_id, submission_id):
         if question.is_get_score(choice_ids):
             grade += question.grade
             print(question.is_get_score(choice_ids))
-    print(grade)
 
     flags = []
     for question in questions_list:
@@ -175,7 +174,7 @@ def show_exam_result(request, course_id, submission_id):
             entries[key] = value
             flags.remove(value)
             break
-    print(entries)
+
     context['course'] = course
     context['selected_ids'] = choice_ids
     context['grade'] = grade
